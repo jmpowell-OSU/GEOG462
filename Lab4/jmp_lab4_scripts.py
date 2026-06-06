@@ -280,7 +280,7 @@ So if x_field is "NDVI_mean" and x_min is 0.1, any parcel row with an NDVI below
 #   Here, and you have the name of the file for the control file
 #  Below, simply call the "plot_from_file" method to run the .csv fil
 
-param_file = 'params_acres.csv'  #  this assumes you've placed in the 
+param_file = 'params_other.csv'  #  this assumes you've placed in the 
                             # python code directory you're working in here. 
 # Your code:
 
@@ -308,12 +308,15 @@ if ok:
 
 # Your answer
 
-
+# It just won't know how to plot the data. That, or it will crash. Our code is built around plotting numbers on the axes, and
+# a field like "STATE" wouldn't fly.
 
 
 # Question 8.2
 #  In your lab document, paste in a couple of the
 #    examples of the output .png files. 
+
+# ok
 
 
 
@@ -326,5 +329,6 @@ if ok:
 
 # Your answer:
 
-
-
+# We currently input "outfile" as a parameter, and call it in self.save_scatterplot(). 
+# We could instead have a line in the function def plot_from_file() that builds a string for outfile
+# based on the input x_field and y_field
